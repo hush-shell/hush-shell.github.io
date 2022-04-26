@@ -619,7 +619,7 @@ end
 end
 
 let result = run()
-if std.type() == &quot;error&quot; then
+if std.type(result) == &quot;error&quot; then
 	std.print(&quot;Error: &quot;, result)
 end
 </code></pre>
