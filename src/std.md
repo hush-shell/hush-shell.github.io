@@ -61,7 +61,7 @@ Convert the given value to a JSON *string*. Panics if `value` contains a value t
 #### `std.json.parse(string)`
 Parse the given json `string`. Returns an *error* if parsing fails.
 
-#### `std.length(collection)`
+#### `std.len(collection)`
 Returns the amount of elements in the given collection. Accepts *string*s, *array*s and *dict*s.
 
 #### `std.panic(value)`
