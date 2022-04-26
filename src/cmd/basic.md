@@ -27,7 +27,7 @@ function run()
 end
 
 let result = run()
-if std.type() == "error" then
+if std.type(result) == "error" then
 	std.print("Error: ", result)
 end
 ```
