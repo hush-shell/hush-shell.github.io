@@ -570,7 +570,7 @@ function foo()
 end
 
 function bar()
-	let value = safe_division(5, 0)?
+	let value = safe_div_mod(5, 0)?
 	std.print(value) # this won't be executed, as `?` will trigger an early return.
 end
 
