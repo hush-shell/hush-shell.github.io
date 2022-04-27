@@ -82,6 +82,12 @@ Returns an iterator function that yields numbers in the given range.
 #### `std.read(prompt)`
 Read a line from *stdin*, using the given `prompt`, which must be a *string*.
 
+#### `std.regex(pattern)`
+Build a regex object from `pattern`, which must be a *string*. If `pattern` is not a valid regex, an *error* will be returned. Otherwise, returns a *dict* with the following methods:
+- `match(string)`: returns a *bool* indicating whether the pattern matches the given `string`.
+- `split(string)`: splits `string` using the pattern, returning an array of *string*s.
+- `replace(string, replace)`: returns a *string* with replaced occurrences of pattern in `string`. `replace` must be a string.
+
 #### `std.replace(string, seach, replace)`
 Replace occurrences of `search` with `replace` in `string`. All parameters must be *string*s.
 
