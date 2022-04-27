@@ -201,6 +201,13 @@
 <p>Returns an iterator function that yields numbers in the given range.</p>
 <h4 id="stdreadprompt"><a class="header" href="#stdreadprompt"><code>std.read(prompt)</code></a></h4>
 <p>Read a line from <em>stdin</em>, using the given <code>prompt</code>, which must be a <em>string</em>.</p>
+<h4 id="stdregexpattern"><a class="header" href="#stdregexpattern"><code>std.regex(pattern)</code></a></h4>
+<p>Build a regex object from <code>pattern</code>, which must be a <em>string</em>. If <code>pattern</code> is not a valid regex, an <em>error</em> will be returned. Otherwise, returns a <em>dict</em> with the following methods:</p>
+<ul>
+<li><code>match(string)</code>: returns a <em>bool</em> indicating whether the pattern matches the given <code>string</code>.</li>
+<li><code>split(string)</code>: splits <code>string</code> using the pattern, returning an array of <em>string</em>s.</li>
+<li><code>replace(string, replace)</code>: returns a <em>string</em> with replaced occurrences of pattern in <code>string</code>. <code>replace</code> must be a string.</li>
+</ul>
 <h4 id="stdreplacestring-seach-replace"><a class="header" href="#stdreplacestring-seach-replace"><code>std.replace(string, seach, replace)</code></a></h4>
 <p>Replace occurrences of <code>search</code> with <code>replace</code> in <code>string</code>. All parameters must be <em>string</em>s.</p>
 <h4 id="stdsleepms"><a class="header" href="#stdsleepms"><code>std.sleep(ms)</code></a></h4>
