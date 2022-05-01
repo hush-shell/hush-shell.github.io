@@ -306,6 +306,22 @@ std.print(result.context[0])
 std.print(result.context[1])
 # command returned non-zero (@[ &quot;status&quot;: 1, &quot;pos&quot;: &quot;&lt;stdin&gt; (line 1, column 23)&quot; ])
 </code></pre>
+<h2 id="environment-variables"><a class="header" href="#environment-variables">Environment variables</a></h2>
+<p>Commands may be prefixed by environment assignments, which will apply only for the given command.</p>
+<pre><code class="language-hush">{
+	VAR=value COLOR=false command; # Set environment variables only for this command.
+	another-command;
+}
+</code></pre>
+<p>If you wish to set environment variables permanently, you may use the <code>std.export</code> function:</p>
+<pre><code class="language-hush">std.export(&quot;VAR&quot;, &quot;value&quot;)
+std.export(&quot;COLOR&quot;, &quot;false&quot;)
+{
+	# The environment setting will now affect both commands.
+	command;
+	another-command;
+}
+</code></pre>
 
                     </main>
 

@@ -289,7 +289,7 @@ let dictionary = @[
 std.assert(array[0] == 3)
 
 # this would cause a panic:
-# let x = array[5]
+# let x = array[20]
 
 let dictionary = @[
 	age: 20,
@@ -447,7 +447,7 @@ std.assert(i == 1)
 <p>An iterator function is a function that may be called repeatedly without arguments, and always returns a dictionary with at least one field:</p>
 <ul>
 <li><code>finished</code>: a boolean indicating whether the loop should stop.</li>
-<li><code>value</code>: the value to be assigned to the loop variable. May be omitted if <code>finished</code> is <code>false</code>.</li>
+<li><code>value</code>: the value to be assigned to the loop variable. May be omitted if <code>finished</code> is <code>true</code>.</li>
 </ul>
 <pre><code class="language-hush"># A function to generate an iterator to the given array.
 function iter(array)
@@ -758,6 +758,22 @@ std.print(result.context[0])
 # command returned non-zero (@[ &quot;status&quot;: 1, &quot;pos&quot;: &quot;&lt;stdin&gt; (line 1, column 15)&quot; ])
 std.print(result.context[1])
 # command returned non-zero (@[ &quot;status&quot;: 1, &quot;pos&quot;: &quot;&lt;stdin&gt; (line 1, column 23)&quot; ])
+</code></pre>
+<h2 id="environment-variables"><a class="header" href="#environment-variables">Environment variables</a></h2>
+<p>Commands may be prefixed by environment assignments, which will apply only for the given command.</p>
+<pre><code class="language-hush">{
+	VAR=value COLOR=false command; # Set environment variables only for this command.
+	another-command;
+}
+</code></pre>
+<p>If you wish to set environment variables permanently, you may use the <code>std.export</code> function:</p>
+<pre><code class="language-hush">std.export(&quot;VAR&quot;, &quot;value&quot;)
+std.export(&quot;COLOR&quot;, &quot;false&quot;)
+{
+	# The environment setting will now affect both commands.
+	command;
+	another-command;
+}
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="capture"><a class="header" href="#capture">Capture</a></h1>
 <p>One of the most important features of a shell is to be able to manipulate the standard I/O streams of programs. There are three main ways of doing so: pipes, redirection, and capturing. The first two are commonly used when we just want to forward the output or input of a program. But if we want to preprocess the output, or use it as an argument to another program, we'll usually reach for capturing the output stream as a string in the shell, so that we can handle it ourselves.</p>

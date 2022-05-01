@@ -289,7 +289,7 @@ std.assert(i == 1)
 <p>An iterator function is a function that may be called repeatedly without arguments, and always returns a dictionary with at least one field:</p>
 <ul>
 <li><code>finished</code>: a boolean indicating whether the loop should stop.</li>
-<li><code>value</code>: the value to be assigned to the loop variable. May be omitted if <code>finished</code> is <code>false</code>.</li>
+<li><code>value</code>: the value to be assigned to the loop variable. May be omitted if <code>finished</code> is <code>true</code>.</li>
 </ul>
 <pre><code class="language-hush"># A function to generate an iterator to the given array.
 function iter(array)
