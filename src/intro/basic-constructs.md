@@ -58,7 +58,7 @@ let array = [
 std.assert(array[0] == 3)
 
 # this would cause a panic:
-# let x = array[5]
+# let x = array[20]
 
 let dictionary = @[
 	age: 20,
