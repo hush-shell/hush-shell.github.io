@@ -166,6 +166,7 @@ Hello world!
 <pre><code class="language-shell">$ hush hello-world.hsh
 Hello world!
 </code></pre>
+<p>Alternatively, when given no aguments, <em>Hush</em> will start a non-interactive shell. You can go ahead and write your <em>Hush</em> script into the terminal. When you're done, press Ctrl-D and <em>Hush</em> will execute everything you've typed. Ctrl-D sends a special <a href="https://en.wikipedia.org/wiki/End-of-file">End of File (EOF)</a> signal to the <em>Hush</em> interpreter so that it knows where the script ends.</p>
 <h2 id="tooling"><a class="header" href="#tooling">Tooling</a></h2>
 <p><em>Hush</em> provides some tools for static analyses of scripts, which can be invoked by passing flags to the shell. The most useful one is the <code>--check</code> flag, which will check the script for syntax and semantic errors, without executing it.</p>
 <p>Consider the following <code>script.hsh</code>, which attempts to use the undeclared variable <code>value</code>:</p>
