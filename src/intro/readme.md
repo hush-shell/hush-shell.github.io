@@ -31,6 +31,8 @@ $ hush hello-world.hsh
 Hello world!
 ```
 
+Alternatively, when given no aguments, *Hush* will start a non-interactive shell. You can go ahead and write your *Hush* script into the terminal. When you're done, press Ctrl-D and *Hush* will execute everything you've typed. Ctrl-D sends a special [End of File (EOF)](https://en.wikipedia.org/wiki/End-of-file) signal to the *Hush* interpreter so that it knows where the script ends.
+
 ## Tooling
 
 *Hush* provides some tools for static analyses of scripts, which can be invoked by passing flags to the shell. The most useful one is the `--check` flag, which will check the script for syntax and semantic errors, without executing it.
