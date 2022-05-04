@@ -10,8 +10,17 @@ Gets an array of command line arguments.
 #### `std.assert(value)`
 Asserts that `value` is `true`, panics otherwise.
 
+#### `std.base64.encode(string)`
+Convert the given value to a base64 *string*.
+
+#### `std.base64.decode(string)`
+Parse the given base64 `string`. Returns an *error* if parsing fails.
+
 #### `std.bind(obj, function)`
 Returns a new function that binds `function` to `obj`, so that `self` will always refer to `obj` when the function is called.
+
+#### `std.bytes(string)`
+Convert the given *string* to an array of chars.
 
 #### `std.catch(function)`
 Runs the given `function`, and returns an error if it panics. This should be used sparingly, as panics shouldn't be used for recoverable errors.
@@ -43,6 +52,12 @@ Expands the given `path` in the current directory, using the shell expansion rul
 #### `std.has_error(value)`
 Recursively checks if `value` contains a value of type *error*.
 
+#### `std.hex.encode(string)`
+Convert the given value to a hex *string*.
+
+#### `std.hex.decode(string)`
+Parse the given hex `string`. Returns an *error* if parsing fails.
+
 #### `std.import(path)`
 Load the *Hush* script from the given path, relative to the current file.
 
@@ -55,10 +70,10 @@ Checks if the given `collection` is empty. Accepts *string*s, *array*s and *dict
 #### `std.iter(collection)`
 Returns an iterator function for the given `collection`. Accepts *string*s, *array*s and *dict*s.
 
-#### `std.json.dump(value)`
+#### `std.json.encode(value)`
 Convert the given value to a JSON *string*. Panics if `value` contains a value that cannot be serialized as JSON (*function* or *error*).
 
-#### `std.json.parse(string)`
+#### `std.json.decode(string)`
 Parse the given json `string`. Returns an *error* if parsing fails.
 
 #### `std.len(collection)`
