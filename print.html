@@ -795,7 +795,7 @@ end
 std.print(get_first_word()) # Hello
 </code></pre>
 <p>The separation of the <em>stdout</em> and <em>stderr</em> fields in the resulting <em>dict</em> enables the programmer to properly handle the standard error stream separately from the standard output stream, something that is more complicated than it should in traditional shells.</p>
-<p>If the command block fails, the resulting <em>error</em> will contain the output that captured was captured before the block failed:</p>
+<p>If the command block fails, the resulting <em>error</em> will contain the output that was captured before the block failed:</p>
 <pre><code class="language-hush">let result = ${
 	echo Hello world!;
 	echo The next command wil fail 1&gt;2;
