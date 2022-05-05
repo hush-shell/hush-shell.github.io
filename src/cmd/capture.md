@@ -26,7 +26,7 @@ std.print(get_first_word()) # Hello
 
 The separation of the *stdout* and *stderr* fields in the resulting *dict* enables the programmer to properly handle the standard error stream separately from the standard output stream, something that is more complicated than it should in traditional shells.
 
-If the command block fails, the resulting *error* will contain the output that captured was captured before the block failed:
+If the command block fails, the resulting *error* will contain the output that was captured before the block failed:
 
 ```hush
 let result = ${
