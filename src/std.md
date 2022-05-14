@@ -40,6 +40,9 @@ Gets the value of the environment variable `key`, or *nil* if it's not defined.
 #### `std.error(description, context)`
 Create a new *error* with the given description and context. The description must be a string.
 
+#### `std.exit(int)`
+Terminates execution immediately with the given status code. Panics if the status code is not in the range [0, 255].
+
 #### `std.export(key, value)`
 Set the environment variable `key` to `value`. Both arguments must be *string*s.
 
