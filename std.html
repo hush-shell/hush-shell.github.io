@@ -153,8 +153,14 @@
 <p>Gets an array of command line arguments.</p>
 <h4 id="stdassertvalue"><a class="header" href="#stdassertvalue"><code>std.assert(value)</code></a></h4>
 <p>Asserts that <code>value</code> is <code>true</code>, panics otherwise.</p>
+<h4 id="stdbase64encodestring"><a class="header" href="#stdbase64encodestring"><code>std.base64.encode(string)</code></a></h4>
+<p>Convert the given value to a base64 <em>string</em>.</p>
+<h4 id="stdbase64decodestring"><a class="header" href="#stdbase64decodestring"><code>std.base64.decode(string)</code></a></h4>
+<p>Parse the given base64 <code>string</code>. Returns an <em>error</em> if parsing fails.</p>
 <h4 id="stdbindobj-function"><a class="header" href="#stdbindobj-function"><code>std.bind(obj, function)</code></a></h4>
 <p>Returns a new function that binds <code>function</code> to <code>obj</code>, so that <code>self</code> will always refer to <code>obj</code> when the function is called.</p>
+<h4 id="stdbytesstring"><a class="header" href="#stdbytesstring"><code>std.bytes(string)</code></a></h4>
+<p>Convert the given <em>string</em> to an array of chars.</p>
 <h4 id="stdcatchfunction"><a class="header" href="#stdcatchfunction"><code>std.catch(function)</code></a></h4>
 <p>Runs the given <code>function</code>, and returns an error if it panics. This should be used sparingly, as panics shouldn't be used for recoverable errors.</p>
 <h4 id="stdcddir"><a class="header" href="#stdcddir"><code>std.cd(dir)</code></a></h4>
@@ -167,6 +173,8 @@
 <p>Gets the value of the environment variable <code>key</code>, or <em>nil</em> if it's not defined.</p>
 <h4 id="stderrordescription-context"><a class="header" href="#stderrordescription-context"><code>std.error(description, context)</code></a></h4>
 <p>Create a new <em>error</em> with the given description and context. The description must be a string.</p>
+<h4 id="stdexitint"><a class="header" href="#stdexitint"><code>std.exit(int)</code></a></h4>
+<p>Terminates execution immediately with the given status code. Panics if the status code is not in the range [0, 255].</p>
 <h4 id="stdexportkey-value"><a class="header" href="#stdexportkey-value"><code>std.export(key, value)</code></a></h4>
 <p>Set the environment variable <code>key</code> to <code>value</code>. Both arguments must be <em>string</em>s.</p>
 <h4 id="stdfloatvalue"><a class="header" href="#stdfloatvalue"><code>std.float(value)</code></a></h4>
@@ -175,6 +183,10 @@
 <p>Expands the given <code>path</code> in the current directory, using the shell expansion rules (<code>*</code>, <code>%</code>, etc).</p>
 <h4 id="stdhas_errorvalue"><a class="header" href="#stdhas_errorvalue"><code>std.has_error(value)</code></a></h4>
 <p>Recursively checks if <code>value</code> contains a value of type <em>error</em>.</p>
+<h4 id="stdhexencodestring"><a class="header" href="#stdhexencodestring"><code>std.hex.encode(string)</code></a></h4>
+<p>Convert the given value to a hex <em>string</em>.</p>
+<h4 id="stdhexdecodestring"><a class="header" href="#stdhexdecodestring"><code>std.hex.decode(string)</code></a></h4>
+<p>Parse the given hex <code>string</code>. Returns an <em>error</em> if parsing fails.</p>
 <h4 id="stdimportpath"><a class="header" href="#stdimportpath"><code>std.import(path)</code></a></h4>
 <p>Load the <em>Hush</em> script from the given path, relative to the current file.</p>
 <h4 id="stdintvalue"><a class="header" href="#stdintvalue"><code>std.int(value)</code></a></h4>
@@ -183,9 +195,9 @@
 <p>Checks if the given <code>collection</code> is empty. Accepts <em>string</em>s, <em>array</em>s and <em>dict</em>s.</p>
 <h4 id="stditercollection"><a class="header" href="#stditercollection"><code>std.iter(collection)</code></a></h4>
 <p>Returns an iterator function for the given <code>collection</code>. Accepts <em>string</em>s, <em>array</em>s and <em>dict</em>s.</p>
-<h4 id="stdjsondumpvalue"><a class="header" href="#stdjsondumpvalue"><code>std.json.dump(value)</code></a></h4>
+<h4 id="stdjsonencodevalue"><a class="header" href="#stdjsonencodevalue"><code>std.json.encode(value)</code></a></h4>
 <p>Convert the given value to a JSON <em>string</em>. Panics if <code>value</code> contains a value that cannot be serialized as JSON (<em>function</em> or <em>error</em>).</p>
-<h4 id="stdjsonparsestring"><a class="header" href="#stdjsonparsestring"><code>std.json.parse(string)</code></a></h4>
+<h4 id="stdjsondecodestring"><a class="header" href="#stdjsondecodestring"><code>std.json.decode(string)</code></a></h4>
 <p>Parse the given json <code>string</code>. Returns an <em>error</em> if parsing fails.</p>
 <h4 id="stdlencollection"><a class="header" href="#stdlencollection"><code>std.len(collection)</code></a></h4>
 <p>Returns the amount of elements in the given collection. Accepts <em>string</em>s, <em>array</em>s and <em>dict</em>s.</p>
