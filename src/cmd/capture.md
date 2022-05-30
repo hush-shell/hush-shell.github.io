@@ -36,6 +36,6 @@ let result = ${
 }
 
 std.assert(std.type(result) == "error")
-std.assert(result.context.stdout == "Hello world!\n")
-std.assert(result.context.stderr == "The next command wil fail\n")
+std.assert(result.stdout == "Hello world!\n")
+std.assert(result.stderr == "The next command wil fail\n")
 ```
