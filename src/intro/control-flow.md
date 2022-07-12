@@ -4,7 +4,7 @@
 
 In *Hush*, conditionals expect a condition of type ***bool***. Attempt to  use values of other types, such as *nil*, will result in a panic.
 
-*If* expressions may assume two forms, with and without the `else` fragment:
+*If* expressions may assume three forms, with and without the `else` or `elseif` fragment:
 
 ```hush
 let condition = true
@@ -18,9 +18,15 @@ if condition then
 else
 	# ...
 end
+
+if condition then
+	# ...
+elseif condition then
+	# ...
+end
 ```
 
-As they are expressions, they will evaluate to whatever is the value resulting in the last statement of the executed block. If the `else` block is omitted and the condition evaluates to `false`, the expression will result in `nil`.
+As they are expressions, they will evaluate to whatever is the value resulting in the last statement of the executed block. If the `else`/`elseif` block is omitted and the condition evaluates to `false`, the expression will result in `nil`.
 
 ```hush
 let condition = false
