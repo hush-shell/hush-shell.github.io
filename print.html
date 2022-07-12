@@ -308,7 +308,7 @@ dictionary.greet() # prints &quot;hello!&quot;
 <div style="break-before: page; page-break-before: always;"></div><h1 id="control-flow-and-functions"><a class="header" href="#control-flow-and-functions">Control Flow and Functions</a></h1>
 <h2 id="if-expressions"><a class="header" href="#if-expressions"><em>If</em> expressions</a></h2>
 <p>In <em>Hush</em>, conditionals expect a condition of type <em><strong>bool</strong></em>. Attempt to  use values of other types, such as <em>nil</em>, will result in a panic.</p>
-<p><em>If</em> expressions may assume two forms, with and without the <code>else</code> fragment:</p>
+<p><em>If</em> expressions may assume three forms, with and without the <code>else</code> or <code>elseif</code> fragment:</p>
 <pre><code class="language-hush">let condition = true
 
 if condition then
@@ -320,8 +320,14 @@ if condition then
 else
 	# ...
 end
+
+if condition then
+	# ...
+elseif condition then
+	# ...
+end
 </code></pre>
-<p>As they are expressions, they will evaluate to whatever is the value resulting in the last statement of the executed block. If the <code>else</code> block is omitted and the condition evaluates to <code>false</code>, the expression will result in <code>nil</code>.</p>
+<p>As they are expressions, they will evaluate to whatever is the value resulting in the last statement of the executed block. If the <code>else</code>/<code>elseif</code> block is omitted and the condition evaluates to <code>false</code>, the expression will result in <code>nil</code>.</p>
 <pre><code class="language-hush">let condition = false
 
 let x = if condition then

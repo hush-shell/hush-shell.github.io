@@ -1,7 +1,7 @@
 hljs.registerLanguage("hush", (hljs) => ({
   name: "Hush",
   keywords: {
-    keyword: "let if then else end for in do while function return not and or break self",
+    keyword: "let if then else elseif end for in do while function return not and or break self",
     literal: "false nil true",
   },
   contains: [
