@@ -831,7 +831,10 @@ std.assert(result == nil)
 <p>Some commands must be implemented as shell builtins, so that they can mutate the shell state, a thing that would not be possible for an external program. A good example of such kind is the <code>cd</code> command, which must change the shell's working directory.</p>
 <p><em>Hush</em> currently provides the following builtin commands:</p>
 <ul>
-<li><code>cd</code>: change the working directory to the given argument.</li>
+<li><code>cd TARGET_DIR</code>: change the working directory to <em>TARGET_DIR</em>.</li>
+<li><code>exec PROGRAM [ARG1, ARG2, ARG3...]</code>: replace hush process with <em>PROGRAM</em> (argument 0 = <em>PROGRAM</em>).</li>
+<li><code>exec0 PROGRAM ARG0 [ARG1, ARG2, ARG3...]</code>: replace hush process with <em>PROGRAM</em> (argument 0 = <em>ARG0</em>).</li>
+<li><code>spawn0 PROGRAM ARG0 [ARG1, ARG2, ARG3...]</code>: spawn <em>PROGRAM</em> (argument 0 = <em>ARG0</em>).</li>
 </ul>
 <p>As <em>Hush</em> has no such thing as subshells, builtin commands may not be used in pipes, redirections, or capture blocks.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="standard-library"><a class="header" href="#standard-library">Standard Library</a></h1>
